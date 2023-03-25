@@ -14,7 +14,7 @@ const Catalog = () => (
         <Hero />
       </div>
     </div>
-    <div className={`${styles.paddingX} ${styles.flexCenter} bg-second`}>
+    <div className={`bg-second ${styles.paddingX} ${styles.flexCenter}`}>
       <div className={`${styles.boxWidth}`}>
         <Program />
       </div>
