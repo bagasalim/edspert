@@ -22,7 +22,7 @@ const Navbar = () => {
           </li>
         ))}
         <li>
-          <button className="btn rounded-[50px] text-white bg-salmon-gradient  w-[160px] h-[44px] text-[16px] font-normal">
+          <button className="btn rounded-[50px] text-white bg-salmon-gradient  w-[160px] h-[44px] text-[16px] font-semibold">
             Masuk/Daftar
           </button>
         </li>

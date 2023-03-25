@@ -13,12 +13,17 @@
   );
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
   --primary: #152a46;
+  --secondary: #eff4fa;
   --blue: #2a61a8;
   --ocean: #eff4fa;
   --yellow: #ffcd29;
   --salmon: #ff6161;
   --black: #000000;
   --grey: #a3a3a3;
+  --arblue: #235597;
+  --white: #fff;
+  --orange: #ff6a28;
+  --eclipse: #3c91e612;
 }
 
 * {
@@ -31,6 +36,56 @@
 .bg-blue {
   background: var(--blue);
 }
+.bg-white {
+  background: var(--white);
+}
+
+.bg-second {
+  background: var(--secondary);
+}
+
+.bg-eclipse {
+  position: absolute;
+  background: var(--eclipse);
+  top: 10px;
+  right: 0;
+  width: 340px;
+  height: 520px;
+  border-radius: 0 300px 300px 0;
+  transform: rotate(-180deg);
+  z-index: 2;
+}
+
+.text-grey {
+  color: var(--grey);
+}
+
+.text-yellow {
+  color: var(--yellow);
+}
+
+.text-orange {
+  color: #ff6a28;
+}
+
+.blue-card {
+  border-radius: 20px 20px 0 0;
+}
+
+.white-card {
+  border-radius: 0 0 20px 20px;
+}
+
+.arrow-yellow {
+  border-top: 222px solid transparent;
+  border-right: 182px solid var(--yellow);
+}
+
+.arrow-blue {
+  border-top: 222px solid transparent;
+  border-left: 182px solid var(--arblue);
+}
+
 .bg-black-gradient {
   background: linear-gradient(
     144.39deg,
