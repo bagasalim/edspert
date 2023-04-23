@@ -96,6 +96,79 @@ export const programs = [
   },
 ];
 
+export const subjects = [
+  {
+    title: "Pengenalan Programming Laravel",
+    description:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden.",
+  },
+  {
+    title: "Materi Bootcamp Laravel 2",
+    description:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden.",
+  },
+  {
+    title: "Materi Bootcamp Laravel 3",
+    description:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden.",
+  },
+  {
+    title: "Materi Bootcamp Laravel 4",
+    description:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden.",
+  },
+  {
+    title: "Materi Bootcamp Laravel 5",
+    description:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden.",
+  },
+  {
+    title: "Materi Bootcamp Laravel 6",
+    description:
+      "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden.",
+  },
+];
+
+export const facilities = [
+  {
+    title: "E-Sertifikat",
+  },
+  {
+    title: "Portofolio",
+  },
+  {
+    title: "Job Connector",
+  },
+  {
+    title: "Career Development",
+  },
+];
+
+export const atm = [
+  "Masukkan kartu ke mesing ATM Mandiri",
+  "Pilih Bahasa",
+  "Masukkan PIN ATM",
+  "Pilih menu transaksi lainnya",
+  "Pilih menu “Transfer”, lalu pilih ke relk Mandiri",
+  "Masukkan no rekening yang dituju",
+  "Masukkan nominal jumlah uang yang akan di transfer",
+  "Layar ATM akan menampilkan data transaksi anda, jika data sudah benar pilih “YA”",
+  "Selesai, struk akan keluar dari mesin ATM",
+];
+
+export const information = [
+  {
+    address:
+      "Jl. Watugede No.58, Wonorejo, Sariharjo, Kec. Ngaglik, Kabupaten Sleman, Daerah Istimewa Yogyakarta 55581",
+  },
+  {
+    phone: "+62-821-2382-4483",
+  },
+  {
+    email: "halo@widyaedu.com",
+  },
+];
+
 export const footer = [
   {
     title: "Program",

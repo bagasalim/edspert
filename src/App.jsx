@@ -1,8 +1,8 @@
 import "./App.css";
-import Catalog from "./pages/Catalog";
+import Router from "./router";
 
 function App() {
-  return <Catalog />;
+  return <Router />;
 }
 
 export default App;

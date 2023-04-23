@@ -7,7 +7,7 @@
 :root {
   --card-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
   --primary: #152a46;
-  --secondary: #eff4fa;
+  --secondary: #f1f7ff;
   --blue: #2a61a8;
   --ocean: #eff4fa;
   --yellow: #ffcd29;
@@ -18,6 +18,8 @@
   --white: #fff;
   --orange: #ff6a28;
   --eclipse: #3c91e612;
+  --navy: #2b3e58;
+  --underline: #1097e7;
 }
 
 * {
@@ -38,6 +40,14 @@
   background: var(--secondary);
 }
 
+.bg-yellow {
+  background: var(--yellow);
+}
+
+.bg-navy {
+  background: var(--navy);
+}
+
 .bg-eclipse {
   position: absolute;
   background: var(--eclipse);
@@ -54,6 +64,10 @@
   color: var(--grey);
 }
 
+.text-navy {
+  color: var(--navy);
+}
+
 .text-yellow {
   color: var(--yellow);
 }
@@ -61,7 +75,9 @@
 .text-orange {
   color: #ff6a28;
 }
-
+.text-underline {
+  color: var(--underline);
+}
 .blue-card {
   border-radius: 20px 20px 0 0;
 }
@@ -83,6 +99,11 @@
 .sidebar {
   -webkit-animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   animation: slide-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.b-rad {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 @-webkit-keyframes slide-top {
@@ -147,4 +168,42 @@
 .mentor-names p:not(:last-child)::after {
   content: ",";
   margin-right: 5px;
+}
+
+.card-box {
+  background: #ffffff;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.09);
+  border-radius: 20px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.menuItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 2rem;
+  position: relative;
+  transition: all 300ms ease;
+}
+
+.menuItem:hover {
+  cursor: pointer;
+}
+
+.active {
+  background: #197bff;
+  margin-left: 0;
+}
+
+.active::before {
+  content: "";
+  width: 8px;
+  height: 100%;
+  background: red;
+  margin-right: calc(1rem - 8px);
 }
