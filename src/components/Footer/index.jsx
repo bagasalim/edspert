@@ -37,8 +37,8 @@ const Footer = () => (
 
       <div className=" flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10 z-[5] relative ">
         <div className=" bg-eclipse "></div>
-        {footer.map((footerTitle) => (
-          <div className="flex flex-col ss:my-0 my-4 " key={footerTitle.key}>
+        {footer.map((footerTitle, index) => (
+          <div className="flex flex-col ss:my-0 my-4 " key={index}>
             <h4 className="font-vietnam font-medium text-[18px] leading-[27px] text-black mr-5">
               {footerTitle.title}
             </h4>

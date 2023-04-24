@@ -1,5 +1,7 @@
+import { Provider } from "react-redux";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Catalog, Checkouts, Details, Instructions } from "../pages";
+import store from "../store";
 const routeList = createBrowserRouter([
   {
     path: "/",
@@ -25,7 +27,11 @@ const routeList = createBrowserRouter([
 ]);
 
 const Router = () => {
-  return <RouterProvider router={routeList} />;
+  return (
+    <Provider store={store}>
+      <RouterProvider router={routeList} />
+    </Provider>
+  );
 };
 
 export default Router;
