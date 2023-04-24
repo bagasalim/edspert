@@ -13,14 +13,14 @@ export const getProducts = createAsyncThunk(
   }
 );
 
-// export const fetchProductId = createAsyncThunk(
-//   "product/getProductById",
-//   async (productID) => {
-//     try {
-//       const response = await mockApi.get(`/product/${productID}`);
-//       return response.data;
-//     } catch (error) {
-//       throw error;
-//     }
-//   }
-// );
+export const getProduct = createAsyncThunk(
+  "features/getProduct",
+  async (productID) => {
+    try {
+      const response = await mockApi.get(`/product/${productID}`);
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  }
+);

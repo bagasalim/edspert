@@ -1,15 +1,30 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { bigheader } from "../../assets";
+import { getProduct } from "../../store/product/actions";
 import styles, { layout } from "../../style";
 const Jumbo = () => {
+  const { id } = useParams();
+  const dispatch = useDispatch();
+  const { entity, loading } = useSelector((state) => state.product);
+
+  const fetchProduct = async (id) => {
+    await dispatch(getProduct(id));
+  };
+
+  useEffect(() => {
+    fetchProduct(id);
+  }, []);
+
   return (
     <section id="features" className="flex flex-1">
       <div
         className={`${layout.sectionInfo} flex justify-center items-start flex-col sm:px-12 px-8 sm:py-12 py-6`}
       >
-        <h2 className={styles.heading2}>Programming Laravel</h2>
+        <h2 className={styles.heading2}>{entity.title}</h2>
         <h3 className={`text-white text-[32px] font-vietnam`}>
-          Getting Started With Laravel 9
+          {entity.description}
         </h3>
 
         <h5 className={`mt-5 text-white font-vietnam text-[18px]`}>Mentor</h5>

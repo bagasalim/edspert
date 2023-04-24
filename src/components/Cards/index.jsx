@@ -3,6 +3,7 @@ import { person } from "../../assets";
 import { rupiahLocale } from "./../../utils";
 
 const Cards = ({
+  id,
   program,
   title,
   description,
@@ -13,7 +14,7 @@ const Cards = ({
 }) => {
   return (
     <div
-      className={`flex flex-col min-w-[360px] max-w-[360px] md:mr-10 sm:mr-5 mr-0 my-5 feedback-card h-full justify-center`}
+      className={`flex flex-col min-w-[360px] max-w-[360px] md:mr-10 sm:mr-5 mr-0 my-5 feedback-card h-auto justify-center`}
     >
       <div className="flex flex-row bg-blue py-2 px-3 blue-card">
         <img

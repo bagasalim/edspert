@@ -38,6 +38,17 @@ export const productSlice = createSlice({
       .addCase(productAct.getProducts.rejected, (state, action) => {
         state.loading = false;
         state.error = action;
+      })
+      .addCase(productAct.getProduct.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(productAct.getProduct.fulfilled, (state, action) => {
+        state.loading = false;
+        state.entity = action.payload;
+      })
+      .addCase(productAct.getProduct.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action;
       }),
 });
 

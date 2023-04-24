@@ -11,15 +11,15 @@ const routeList = createBrowserRouter([
         element: <Catalog />,
       },
       {
-        path: "/detail:id",
+        path: "detail/:id",
         element: <Details />,
       },
       {
-        path: "/checkout",
+        path: "checkout",
         element: <Checkouts />,
       },
       {
-        path: "/instructions",
+        path: "instructions",
         element: <Instructions />,
       },
     ],

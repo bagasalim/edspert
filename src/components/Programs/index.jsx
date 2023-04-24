@@ -19,17 +19,16 @@ const Program = () => {
   }, []);
 
   const goToDetail = (id) => {
-    navigate(`detail/${id}`);
+    navigate(`/detail/${id}`);
   };
 
   return (
     <section id="programs" className={`${styles.paddingY}  flex-col relative `}>
-      <div
-        onClick={() => goToDetail}
-        className="flex flex-wrap sm:justify-start w-full feedback-container relative z-[1]"
-      >
+      <div className="cursor-pointer flex flex-wrap gap-10 sm:justify-start w-full feedback-container relative z-[1]">
         {entities.map((card, index) => (
-          <Cards key={index} {...card} />
+          <div key={index} onClick={() => goToDetail(card.id)} className="">
+            <Cards {...card} />
+          </div>
         ))}
       </div>
     </section>
