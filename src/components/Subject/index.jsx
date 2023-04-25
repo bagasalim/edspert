@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { check } from "../../assets";
 import { facilities, subjects } from "../../constants";
 import { getProduct } from "../../store/product/actions";
@@ -9,6 +9,7 @@ import { rupiahLocale } from "../../utils";
 const Subject = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { entity, loading } = useSelector((state) => state.product);
 
   const fetchProduct = async (id) => {
@@ -18,6 +19,10 @@ const Subject = () => {
   useEffect(() => {
     fetchProduct(id);
   }, []);
+
+  const goToCheckout = () => {
+    navigate(`/checkout`);
+  };
   return (
     <>
       <section className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
@@ -39,7 +44,10 @@ const Subject = () => {
                 </p>
               </div>
               <div className="flex justify-center items-center">
-                <button className="btn rounded-[50px] justify-center text-white bg-yellow w-[250px] h-[50px] text-[14px] font-semibold my-3">
+                <button
+                  onClick={() => goToCheckout(id)}
+                  className="btn rounded-[50px] justify-center text-white bg-yellow w-[250px] h-[50px] text-[14px] font-semibold my-3"
+                >
                   Daftar Kelas
                 </button>
               </div>
