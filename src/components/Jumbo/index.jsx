@@ -7,15 +7,15 @@ import styles, { layout } from "../../style";
 const Jumbo = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  const { entity, loading } = useSelector((state) => state.product);
-
-  const fetchProduct = async (id) => {
-    await dispatch(getProduct(id));
-  };
+  const { entity } = useSelector((state) => state.product);
 
   useEffect(() => {
-    fetchProduct(id);
-  }, []);
+    const fetchProduct = async () => {
+      await dispatch(getProduct(id));
+    };
+
+    fetchProduct();
+  }, [dispatch, id]);
 
   return (
     <section id="features" className="flex flex-1">

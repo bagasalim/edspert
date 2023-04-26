@@ -10,13 +10,13 @@ const Program = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const fetchProducts = async () => {
-    dispatch(getProducts());
-  };
-
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    const fetchProduct = async () => {
+      await dispatch(getProducts());
+    };
+
+    fetchProduct();
+  }, [dispatch]);
 
   const goToDetail = (id) => {
     navigate(`/detail/${id}`);
