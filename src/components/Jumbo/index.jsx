@@ -30,13 +30,17 @@ const Jumbo = () => {
         <h5 className={`mt-5 text-white font-vietnam text-[18px]`}>Mentor</h5>
         <div className="flex flex-row gap-5">
           <div className=" text-white font-vietnam ">
-            <p className="font-semibold text-[20px]">William Hartono</p>
+            <p className="font-semibold text-[20px]">
+              {entity.mentors[0].name}
+            </p>
             <p className="font-normal text-[18px]">
               Frontend Developer at Widya Edu
             </p>
           </div>
           <div className="font-normal  text-white font-vietnam">
-            <p className="font-semibold text-[20px]">Farel Prayoga</p>
+            <p className="font-semibold text-[20px]">
+              {entity.mentors[1].name}
+            </p>
             <p className="font-normal text-[18px]"> Developer at Widya Edu</p>
           </div>
         </div>

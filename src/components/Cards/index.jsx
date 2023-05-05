@@ -1,9 +1,7 @@
-import React from "react";
 import { person } from "../../assets";
 import { rupiahLocale } from "./../../utils";
 
 const Cards = ({
-  id,
   program,
   title,
   description,

@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { close, edspert, menu } from "../../assets/";
 import { navLinks } from "../../constants";
 const Navbar = () => {
+  const navigate = useNavigate();
   const [active, setActive] = useState("Home");
   const [toggle, setToggle] = useState(false);
   return (
@@ -9,7 +11,8 @@ const Navbar = () => {
       <img
         src={edspert}
         alt="edspert logo"
-        className="w-[150px] h-[30px] items-center"
+        className="w-[150px] h-[30px] items-center cursor-pointer"
+        onClick={() => navigate(`/`)}
       />
 
       <ul className="list-none sm:flex hidden justify-end items-center flex-1">

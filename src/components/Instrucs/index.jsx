@@ -4,11 +4,14 @@ import { useNavigate, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import { arrowleft, mandiri, person, right } from "../../assets";
 import { atm } from "../../constants";
+import { clearCart } from "../../store/cart/slice";
 import { getProduct } from "../../store/product/actions";
 import styles, { layout } from "../../style";
 import { rupiahLocale } from "../../utils";
 
-const Instrucs = ({ total }) => {
+const Instrucs = () => {
+  const total = localStorage.getItem("total");
+
   const { id } = useParams();
   const dispatch = useDispatch();
   const { entity } = useSelector((state) => state.product);
@@ -41,6 +44,9 @@ const Instrucs = ({ total }) => {
         setShowAlert(false);
       },
     });
+  const handleClearData = () => {
+    dispatch(clearCart());
+  };
 
   return (
     <>
@@ -120,8 +126,8 @@ const Instrucs = ({ total }) => {
                   <p className="text-[24px]">{rupiahLocale(total)}</p>
                 </div>
               </div>
-              <div className="flex flex-[1] flex-col py-3 px-3">
-                <div className={`font-vietnam font-normal my-3`}>
+              <div className="flex flex-[1] flex-col px-3">
+                <div className={`font-vietnam font-normal `}>
                   <h4 className="font-semibold text-[20px] my-3">
                     Instruksi Pembayaran
                   </h4>
@@ -150,7 +156,10 @@ const Instrucs = ({ total }) => {
                 Sudah Transfer? Lakukan verifikasi pembayaran segera!
               </h2>
               <button
-                onClick={() => setShowAlert(true)}
+                onClick={() => {
+                  setShowAlert(true);
+                  handleClearData();
+                }}
                 className="btn rounded-[50px] item-center text-white bg-yellow  w-[262px] h-[53px] text-[16px] font-semibold"
               >
                 Verifikasi Pembayaran

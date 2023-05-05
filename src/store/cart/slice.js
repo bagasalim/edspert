@@ -20,9 +20,12 @@ export const cartSlice = createSlice({
         }
       }
     },
+    clearCart: (state) => {
+      state.entities = [];
+    },
   },
 });
 
-export const { addItem } = cartSlice.actions;
+export const { addItem, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

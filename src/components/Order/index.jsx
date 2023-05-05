@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { left, person } from "../../assets";
-import { addItem } from "../../store/cart/slice";
 import { getProduct } from "../../store/product/actions";
 import { rupiahLocale } from "../../utils";
 
@@ -11,7 +10,7 @@ const Order = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { entity } = useSelector((state) => state.product);
-
+  const { entities } = useSelector((state) => state.cart);
   useEffect(() => {
     const fetchProduct = async () => {
       await dispatch(getProduct(id));
@@ -20,19 +19,18 @@ const Order = () => {
     fetchProduct();
   }, [dispatch, id]);
 
-  const addToCart = () => {
-    dispatch(addItem(entity));
+  const countTotal = (data) => {
+    const total = data.reduce((prev, current) => {
+      return prev + parseInt(current.actualprice, 10);
+    }, 0);
+    return total;
   };
 
   const goToInstructions = () => {
-    addToCart();
+    const total = countTotal(entities);
+    localStorage.setItem("total", total);
     navigate(`/instructions`);
   };
-
-  const randomCode = Math.floor(Math.random() * 989) + 10;
-  const potongan = entity.price - entity.actualprice;
-  const promo = 0;
-  const total = entity.price - potongan + randomCode + promo;
 
   return (
     <div className={`rounded-[20px] px-8 py-4`}>
@@ -86,33 +84,22 @@ const Order = () => {
       </div>
       <div className={`font-vietnam font-normal mt-5`}>
         <h4 className="font-semibold text-[14px] my-3">Ringkasan Pembayaran</h4>
-        <div className="flex justify-between">
-          <p className="font-normal text-[14px] my-1">Harga Kelas</p>
-          <p className="font-normal text-[14px] my-1">
-            {rupiahLocale(entity.price)}
-          </p>
-        </div>
-        <div className="flex justify-between">
-          <p className="font-normal text-[14px] my-1">Potongan</p>
-          <p className="font-normal text-[14px] my-1">
-            {rupiahLocale(entity.price - entity.actualprice)}
-          </p>
-        </div>
-        <div className="flex justify-between">
-          <p className="font-normal text-[14px] my-1">Promo</p>
-          <p className="font-normal text-[14px] my-1">{rupiahLocale(promo)}</p>
-        </div>
-        <div className="flex justify-between">
-          <p className="font-normal text-[14px] my-1">Kode Unik</p>
-          <p className="font-normal text-[14px] my-1">
-            {rupiahLocale(randomCode)}
-          </p>
-        </div>
+        {entities.map((item, index) => {
+          return (
+            <div className="flex justify-between">
+              <p className="font-normal text-[14px] my-1">{item.title}</p>
+              <p className="font-normal text-[14px] my-1">
+                {rupiahLocale(item.actualprice)}
+              </p>
+            </div>
+          );
+        })}
+
         <hr className="my-3" />
         <div className="flex justify-between">
           <p className="font-semibold text-[14px] my-1">Total Pembayaran</p>
           <p className="font-semibold text-[14px] my-1">
-            {rupiahLocale(total)}
+            {rupiahLocale(countTotal(entities))}
           </p>
         </div>
       </div>

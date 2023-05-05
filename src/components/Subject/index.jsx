@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
+import { BsCartPlus } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { check } from "../../assets";
 import { facilities, subjects } from "../../constants";
+import { addItem } from "../../store/cart/slice";
 import { getProduct } from "../../store/product/actions";
 import styles from "../../style";
 import { rupiahLocale } from "../../utils";
@@ -45,10 +47,16 @@ const Subject = () => {
               </div>
               <div className="flex justify-center items-center">
                 <button
-                  onClick={() => goToCheckout(id)}
-                  className="btn rounded-[50px] justify-center text-white bg-yellow w-[250px] h-[50px] text-[14px] font-semibold my-3"
+                  onClick={() => {
+                    dispatch(addItem(entity));
+                    goToCheckout(id);
+                  }}
+                  className="btn rounded-[50px] justify-center text-white bg-yellow w-[250px] h-[50px] text-[14px] font-semibold my-3 flex items-center"
                 >
-                  Daftar Kelas
+                  <span className="mr-2 text-[22px]">
+                    <BsCartPlus />
+                  </span>
+                  Tambahkan Keranjang
                 </button>
               </div>
             </div>

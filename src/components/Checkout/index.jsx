@@ -1,4 +1,3 @@
-import React from "react";
 import { arrowleft, right } from "../../assets";
 import styles from "../../style";
 import Order from "../Order";
