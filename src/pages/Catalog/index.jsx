@@ -1,4 +1,4 @@
-import { Footer, Hero, Navbar } from "../../components";
+import { Banner, Footer, Navbar } from "../../components";
 import Program from "../../components/Programs";
 import styles from "../../style";
 
@@ -11,7 +11,7 @@ const Catalog = () => (
     </div>
     <div className={`bg-blue ${styles.flexStart}`}>
       <div className={`${styles.boxWidth}`}>
-        <Hero />
+        <Banner />
       </div>
     </div>
     <div className={`bg-second ${styles.paddingX} ${styles.flexCenter}`}>

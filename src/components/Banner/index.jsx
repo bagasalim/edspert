@@ -1,7 +1,7 @@
 import React from "react";
 import { bigheader } from "../../assets";
 import styles, { layout } from "../../style";
-const Hero = () => {
+const Banner = () => {
   return (
     <section id="features" className="flex flex-1">
       <div className={`${layout.sectionInfo} ${styles.paddingX}`}>
@@ -25,4 +25,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Banner;

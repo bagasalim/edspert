@@ -1,6 +1,6 @@
+import Banner from "./Banner";
 import Checkout from "./Checkout";
 import Footer from "./Footer";
-import Hero from "./Hero";
 import Instrucs from "./Instrucs";
 import Join from "./Join";
 import Jumbo from "./Jumbo";
@@ -10,7 +10,7 @@ import Payment from "./Payments";
 import Subject from "./Subject";
 export {
   Navbar,
-  Hero,
+  Banner,
   Footer,
   Jumbo,
   Join,
